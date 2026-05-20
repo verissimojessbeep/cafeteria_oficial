@@ -1,0 +1,226 @@
+/* --- Resets e Variáveis Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-fundo: #fdfaf6;       /* Creme bem claro */
+    --cor-primaria: #4a2c11;    /* Marrom Café Escuro */
+    --cor-secundaria: #6f4e37;  /* Marrom Café com Leite */
+    --cor-destaque: #c5a059;    /* Dourado/Âmbar */
+    --cor-texto: #332211;       /* Marrom quase preto para leitura */
+    --card-fundo: #ffffff;
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-corpo: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+}
+
+/* --- Cabeçalho (Logo e Nome) --- */
+.main-header {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--cor-destaque);
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    fill: var(--cor-destaque);
+}
+
+.main-header h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+}
+
+/* --- Menu de Categorias (Navegação Fixa) --- */
+.category-nav {
+    background-color: var(--cor-secundaria);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.category-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.category-nav a {
+    color: #fdfaf6;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.category-nav a:hover, 
+.category-nav a.active {
+    background-color: var(--cor-destaque);
+    color: var(--cor-primaria);
+}
+
+/* --- Seções do Cardápio --- */
+.menu-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.menu-section {
+    margin-bottom: 60px;
+    scroll-margin-top: 80px; /* Evita que o menu fixo cubra o título ao rolar */
+}
+
+.section-title {
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* --- Grid de Produtos e Cards --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--card-fundo);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(74, 44, 17, 0.12);
+}
+
+/* Destaque para o Especial da Casa */
+.product-card.premium {
+    border: 2px solid var(--cor-destaque);
+}
+
+.product-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-info h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.3rem;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+.product-desc {
+    font-size: 0.9rem;
+    color: #665544;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.product-price {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--cor-secundaria);
+    align-self: flex-start;
+    background-color: #fdf7ee;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+/* --- Rodapé --- */
+.main-footer {
+    background-color: var(--cor-primaria);
+    color: #e6dfd9;
+    padding: 40px 20px 20px 20px;
+    margin-top: 80px;
+    border-top: 4px solid var(--cor-destaque);
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+}
+
+.footer-info h3 {
+    color: var(--cor-destaque);
+    font-family: var(--fonte-titulo);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.footer-dev strong {
+    color: var(--cor-destaque);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #a8998e;
+}
+
+/* --- Responsividade Básica --- */
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-header h1 {
+        font-size: 2.2rem;
+    }
+}
